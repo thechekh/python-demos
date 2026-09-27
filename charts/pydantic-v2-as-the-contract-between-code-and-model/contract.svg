@@ -89,12 +89,12 @@ z
 " clip-path="url(#p587df7e9c0)" style="fill: #2f5d3f; stroke: #2f5d3f; stroke-width: 1.2; stroke-linecap: round"/>
    </g>
    <g id="patch_7">
-    <path d="M 220.678381 83.341855 
-Q 142.514068 -1.177363 65.260674 82.358869 
+    <path d="M 220.678381 86.290145 
+Q 142.514068 170.809363 65.260674 87.273131 
 " clip-path="url(#p587df7e9c0)" style="fill: none; stroke: #8a2f2f; stroke-width: 1.2; stroke-linecap: round"/>
-    <path d="M 69.444861 80.78008 
-L 65.260674 82.358869 
-L 66.508155 78.064246 
+    <path d="M 66.508155 91.567754 
+L 65.260674 87.273131 
+L 69.444861 88.85192 
 z
 " clip-path="url(#p587df7e9c0)" style="fill: #8a2f2f; stroke: #8a2f2f; stroke-width: 1.2; stroke-linecap: round"/>
    </g>

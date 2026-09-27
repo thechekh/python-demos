@@ -106,7 +106,7 @@ def draw_contract() -> None:
     ax.text(2.2, 2.09, "JSON text", ha="center", va="bottom", fontsize=8, color=INK_2)
     ax.add_patch(FancyArrowPatch((5.1, 2.0), (5.9, 2.0), arrowstyle="-|>", mutation_scale=10, color=ACCENT, linewidth=1.2))
     ax.text(5.5, 2.09, "valid", ha="center", va="bottom", fontsize=8, color=ACCENT)
-    ax.add_patch(FancyArrowPatch((3.85, 1.5), (1.0, 1.5), arrowstyle="-|>", mutation_scale=10, color=DANGER, linewidth=1.2, connectionstyle="arc3,rad=0.55"))
+    ax.add_patch(FancyArrowPatch((3.85, 1.5), (1.0, 1.5), arrowstyle="-|>", mutation_scale=10, color=DANGER, linewidth=1.2, connectionstyle="arc3,rad=-0.55"))
     ax.text(2.45, 0.3, "ValidationError: the exact fields and reasons,\nsent back as the next prompt — up to three times", ha="center", va="center", fontsize=8, color=DANGER, linespacing=1.3)
     ax.text(3.85, 2.75, "the contract, one Python class, also gives the model its JSON Schema", ha="center", va="center", fontsize=8.5, color=INK_2)
     save(fig, SLUG, "contract")
