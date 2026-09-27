@@ -1,0 +1,112 @@
+{
+  "documents": 200,
+  "max_attempts": 3,
+  "attempts_needed": {
+    "1": 118,
+    "2": 77,
+    "3": 5
+  },
+  "failed": 0,
+  "success_by_budget": {
+    "1": 0.59,
+    "2": 0.975,
+    "3": 1.0
+  },
+  "first_errors": {
+    "value_error": 25,
+    "json_invalid": 19,
+    "date_from_datetime_parsing": 19,
+    "too_short": 10,
+    "greater_than_equal": 9
+  },
+  "normalised_currency": 7,
+  "schema": {
+    "$defs": {
+      "Line": {
+        "properties": {
+          "description": {
+            "minLength": 1,
+            "title": "Description",
+            "type": "string"
+          },
+          "quantity": {
+            "minimum": 1,
+            "title": "Quantity",
+            "type": "integer"
+          },
+          "unit_price": {
+            "anyOf": [
+              {
+                "minimum": 0.0,
+                "type": "number"
+              },
+              {
+                "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d{0,2}0*$",
+                "type": "string"
+              }
+            ],
+            "title": "Unit Price"
+          }
+        },
+        "required": [
+          "description",
+          "quantity",
+          "unit_price"
+        ],
+        "title": "Line",
+        "type": "object"
+      }
+    },
+    "properties": {
+      "invoice_number": {
+        "pattern": "^INV-\\d{4,}$",
+        "title": "Invoice Number",
+        "type": "string"
+      },
+      "issued": {
+        "format": "date",
+        "title": "Issued",
+        "type": "string"
+      },
+      "currency": {
+        "enum": [
+          "EUR",
+          "USD",
+          "GBP"
+        ],
+        "title": "Currency",
+        "type": "string"
+      },
+      "lines": {
+        "items": {
+          "$ref": "#/$defs/Line"
+        },
+        "minItems": 1,
+        "title": "Lines",
+        "type": "array"
+      },
+      "total": {
+        "anyOf": [
+          {
+            "exclusiveMinimum": 0.0,
+            "type": "number"
+          },
+          {
+            "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d{0,2}0*$",
+            "type": "string"
+          }
+        ],
+        "title": "Total"
+      }
+    },
+    "required": [
+      "invoice_number",
+      "issued",
+      "currency",
+      "lines",
+      "total"
+    ],
+    "title": "Invoice",
+    "type": "object"
+  }
+}

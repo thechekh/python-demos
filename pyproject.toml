@@ -1,0 +1,23 @@
+[project]
+name = "python-demos"
+version = "0.1.0"
+description = "The Python demos behind the articles on chekh.dev: asyncio, streaming with FastAPI, Pydantic contracts"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115",
+    "httpx>=0.27",
+    "matplotlib>=3.10",
+    "numpy>=2.1",
+    "pydantic>=2.9",
+    "uvicorn>=0.30",
+]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
